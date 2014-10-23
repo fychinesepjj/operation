@@ -1,0 +1,30 @@
+{% load i18n %}
+<div class="menu">
+  <ul>
+    {% for app in admin_app_list %}
+    <li><a class="hide" href="{{ app.url }}" {% if app.highlight %}style="background: #4fb2d3;color: #fff;"{% endif %}>{% trans app.title %}</a>
+      <!--[if lte IE 6]>
+<a href="{{ app.app_url }}">{% trans app.title %}
+<table><tr><td>
+<![endif]-->
+      <ul>
+        {% for model in app.models %}
+        {% if model.admin_url %}
+            <li><a href="{{ model.admin_url }}">{{ model.title }}</a></li>
+        {% else %}
+            <li><a href="{{ model.view_url }}">{{ model.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      <!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+    </li>
+    {% empty %}
+    <p style="margin-top: 8px;padding: 5px 5px;line-height: 1em;color: #FFB800;">{% trans "You don´t have permission to edit anything." %}</p>
+    {% endfor %}
+  </ul>
+  <!-- clear the floats if required -->
+  <div class="clear"> </div>
+</div>

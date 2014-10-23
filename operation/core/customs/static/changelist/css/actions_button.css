@@ -1,0 +1,35 @@
+.grp-changelist-actions a{
+    color:#fff;
+}
+
+.bg-normal{
+    background-color:#555555;
+}
+
+.bg-danager{
+    background-color:#EE430E;
+}
+
+.bg-ok{
+    background-color:#389702;
+}
+
+.grp-changelist-actions a:hover{
+    background-color: #474747;
+}
+
+.action_link{
+    padding: 5px 10px;
+    display: inline-block;
+    margin-right: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.delete_selected_items, .delete_selected{
+    background:#CA2626;
+}
+
+.grp-changelist-actions a.delete_selected_items:hover, .grp-changelist-actions a.delete_selected:hover{
+    background:#B61717;
+}

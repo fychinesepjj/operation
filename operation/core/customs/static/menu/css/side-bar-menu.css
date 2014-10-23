@@ -1,0 +1,157 @@
+/* common styling */
+/* set up the overall width of the menu div, the font and the margins */
+.menu {
+float:left;
+margin:0;
+z-index:9999;
+margin-left:80px;
+background-image: linear-gradient(#333333,#222222);
+}
+
+body{
+    font-family: "verdana","sans serif","微软雅黑";
+}
+
+.menu>ul>li>a{
+    font-weight: bold;
+}
+
+/* remove the bullets and set the margin and padding to zero for the unordered list */
+.menu ul {
+padding:0;
+margin:0;
+list-style-type: none;
+}
+/* float the list so that the items are in a line and their position relative so that the drop down list will appear in the right place underneath each list item */
+.menu ul li {
+float:left;
+position:relative;
+z-index:9998;
+}
+/* style the links to be 104px wide by 30px high with a top and right border 1px solid white. Set the background color and the font size. */
+.menu ul li a, .menu ul li a:visited {
+display:block;
+text-align:center;
+text-decoration:none;
+min-width: 160px;
+height:40px;
+color:#fff;
+border-width:1px 1px 0 0;
+background-image: linear-gradient(#333333,#222222);
+line-height:40px;
+font-size:14px;
+letter-spacing:1px;
+padding:0 5px;
+}
+/* make the dropdown ul invisible */
+.menu ul li ul {
+display: none;
+margin-top:9px;
+}
+/* specific to non IE browsers */
+/* set the background and foreground color of the main menu li on hover */
+.menu ul li:hover a {
+color:#309bbf;
+background-image: linear-gradient(#666,#333);
+}
+/* make the sub menu ul visible and position it beneath the main menu list item */
+.menu ul li:hover ul {
+display:block;
+position:absolute;
+top:31px;
+left:0;
+width:125px;
+z-index:9997;
+}
+/* style the background and foreground color of the submenu links */
+.menu ul li:hover ul li a {
+display:block;
+background-image: linear-gradient(#333333,#222222);
+height:40px;
+line-height:40px;
+color:#fff;
+font-size:14px;
+}
+/* style the background and forground colors of the links on hover */
+.menu ul li:hover ul li a:hover {
+color:#309bbf;
+background-image: linear-gradient(#666,#333);
+}
+</style>
+<!--[if lte IE 6]>
+<style type="text/css">
+/* styling specific to Internet Explorer IE5.5 and IE6. Yet to see if IE7 handles li:hover */
+/* Get rid of any default table style */
+table {
+border-collapse:collapse;
+margin:0;
+padding:0;
+}
+/* ignore the link used by 'other browsers' */
+.menu ul li a.hide, .menu ul li a:visited.hide {
+/*display:none;*/
+}
+/* set the background and foreground color of the main menu link on hover */
+.menu ul li a:hover {
+color:#309bbf;
+background-image: linear-gradient(#666,#333);
+}
+/* make the sub menu ul visible and position it beneath the main menu list item */
+.menu ul li a:hover ul {
+display:block;
+position:absolute;
+top:32px;
+left:0;
+width:125px;
+}
+/* style the background and foreground color of the submenu links */
+.menu ul li a:hover ul li a {
+background-image: linear-gradient(#333333,#222222);
+height:40px;
+line-height:40px;
+color:#FFF;
+}
+/* style the background and forground colors of the links on hover */
+.menu ul li a:hover ul li a:hover {
+background-image: linear-gradient(#666,#333);
+color:#000;
+}
+
+header#grp-header #grp-navigation h1#grp-admin-title{
+    font-size: 16px !important;
+}
+
+table#result_list td,table#result_list th{
+    line-height: 30px;
+}
+
+.link-btn{
+border: 1px solid #E4E4E4;
+display: inline-block;
+border-radius: 10px;
+background-color: #F1F1F1;
+box-shadow: 1px 1px 4px #666;
+min-width: 140px;
+text-align: center;
+}
+}
+
+.link-btn:hover{
+    background: #fff;
+}
+
+#result_list .grp-row input[type=checkbox], #result_list .grp-row input[type=radio]{
+    top:16px;
+}
+
+#result_list thead th div.grp-text span input[type="checkbox"]{
+    margin: 8px 0 !important;
+}
+
+#result_list img{
+    margin: 8px 0 0 26px;
+}
+
+.grp-readonly img{
+    margin: 2px 0 0 2px;
+}
