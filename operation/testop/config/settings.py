@@ -1,7 +1,6 @@
 # coding:utf-8
 # Django 1.6 settings for operation project.
 import os
-import re
 from django.utils.translation import ugettext_lazy as _
 
 LOG_ROOT = '/tmp'
@@ -166,7 +165,11 @@ APP_MENU_LIST = {
     },
     'auth': {
         'title': 'Auth',
-        'models': {'django.contrib.auth.models.Group': {'title': 'Group', 'order': 1}, 'django.contrib.auth.models.User': {'title': 'User', 'order': 2}},
+        'models': {
+            'django.contrib.auth.models.Group': {'title': 'Group', 'order': 1},
+            'django.contrib.auth.models.User': {'title': 'User', 'order': 2},
+            'django.contrib.admin.models.LogEntry': {'title': _('Admin Log'), 'order': 3},
+        },
         'order': 2,
     }
 }

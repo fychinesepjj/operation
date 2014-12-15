@@ -4,7 +4,6 @@ from django.utils.text import capfirst
 from django.template.loader import get_template
 from django.utils.translation import ugettext_lazy as _
 from django import template
-from fnmatch import fnmatch
 from django.utils import six
 
 register = template.Library()
@@ -16,7 +15,7 @@ def admin_top_menu(context):
     MODELS_MENU_LIST = reverse_menu_list(APP_MENU_LIST)
     app_modules = AppListElementMixin(MODELS_MENU_LIST.keys())
     request_path = context['request'].path
-    default_home = {'title': _('Home'), 'url': '/admin', 'order': -1, 'models': [], 'highlight': True}
+    default_home = {'title': _('Home'), 'url': '/admin/', 'order': -1, 'models': [], 'highlight': True}
     items = app_modules._visible_models(context['request'])
     registered_models = {}
     apps = {}
@@ -56,8 +55,10 @@ def admin_top_menu(context):
                 model_dict['add_url'] = app_modules._get_admin_add_url(model, context)
             if perms['view']:
                 model_dict['view_url'] = app_modules._get_admin_view_url(model, context)
-            current_url_set = {model_dict.get('admin_url', ''), model_dict.get('view_url', '')}
-            if request_path in current_url_set:
+
+            change_url = model_dict.get('admin_url', 'None')
+            view_url = model_dict.get('view_url', 'None')
+            if request_path.startswith(change_url) or request_path.startswith(view_url):
                 apps[app_name]['highlight'] = True
                 default_home['highlight'] = False
 

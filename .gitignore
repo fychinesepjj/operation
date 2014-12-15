@@ -12,13 +12,4 @@
 *.log
 *.bak
 .pydevproject
-*~
-*.1
-*.orig
 *.tar.gz
-GeoLite2-Country-CSV.zip
-GeoLite2-City-CSV.zip
-/reports/
-/reports_coverage/
-/htmlcov/
-pushborker/singleton.py
