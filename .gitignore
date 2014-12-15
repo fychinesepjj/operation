@@ -13,3 +13,4 @@
 *.bak
 .pydevproject
 *.tar.gz
+/repository/db/mongo/Test.py
