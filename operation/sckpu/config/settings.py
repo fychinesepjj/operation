@@ -43,7 +43,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
-MONGODB_CONF = 'mongodb://10.6.7.200:27017'
+MONGODB_CONF = 'mongodb://localhost:27017'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -77,7 +77,7 @@ LOCALE_PATHS = (
 STATIC_URL = '/static/'
 MEDIA_ROOT = '/var/app/data'
 MEDIA_URL = 'http://localhost/'
-STATIC_ROOT = '/var/app/enabled/seabedop-webfront/static'
+STATIC_ROOT = '/var/app/releases/sckpu/current/static'
 #STATICFILES_DIRS = (,)
 
 STATICFILES_FINDERS = (
@@ -156,13 +156,15 @@ LOGGING = {
     }
 }
 
+'''
+'cadmin': {
+    'title': 'abc',
+    'models': {'cadmin.models.PushMessage': {'title': 'push message', 'order': 2}},
+    'order': 1,
+},
+'''
 
 APP_MENU_LIST = {
-    'cadmin': {
-        'title': 'abc',
-        'models': {'cadmin.models.PushMessage': {'title': 'push message', 'order': 2}},
-        'order': 1,
-    },
     'auth': {
         'title': 'Auth',
         'models': {

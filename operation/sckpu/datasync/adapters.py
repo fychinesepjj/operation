@@ -1,10 +1,10 @@
 #! -*- coding:utf-8 -*-
 import logging
-from operation.core.datasync import ModelAdapter
 logger = logging.getLogger('operation')
 
-
-class PushMessageAdapter(ModelAdapter):
+'''
+from operation.core.datasync import ModelAdapter
+class TestAdapter(ModelAdapter):
     def convert_to(self, from_model):
         result_dict = []
         app_infos = {
@@ -14,3 +14,4 @@ class PushMessageAdapter(ModelAdapter):
         }
         result_dict.append(app_infos)
         return result_dict
+'''
