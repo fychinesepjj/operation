@@ -8,6 +8,7 @@
     {% block stylesheets %}
         <link href="{% static "grappelli/jquery/ui/css/custom-theme/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" type="text/css" media="screen" />
         <link href="{% static "grappelli/stylesheets/screen.css" %}" rel="stylesheet" type="text/css" media="screen" />
+        <link href="{% static "base/css/global.css" %}" rel="stylesheet" type="text/css" />
         {% if user.is_authenticated %}
             <link href="{% static "menu/css/side-bar-menu.css" %}" rel="stylesheet" type="text/css" media="screen" />
         {% endif %}

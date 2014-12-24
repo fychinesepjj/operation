@@ -21,13 +21,14 @@ INSTALLED_APPS = (
     'operation.core.customs',
     'grappelli.dashboard',
     'grappelli',
+    'DjangoUeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cadmin',
+    'cadmin'
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -47,7 +48,7 @@ MONGODB_CONF = 'mongodb://localhost:27017'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'public',
+        'NAME': 'sckpu',
         'USER': 'root',
         'PASSWORD': '123456',
         'HOST': 'localhost',
@@ -96,7 +97,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 # Grappelli
 GRAPPELLI_AUTOCOMPLETE_LIMIT = 50
-GRAPPELLI_ADMIN_TITLE = "Public Service"
+GRAPPELLI_ADMIN_TITLE = "Admin Service"
 GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
 
 
@@ -165,6 +166,13 @@ LOGGING = {
 '''
 
 APP_MENU_LIST = {
+    'cadmin': {
+        'title': 'SCKPU',
+        'models': {
+            'cadmin.models.*': {},
+        },
+        'order': 1,
+    },
     'auth': {
         'title': 'Auth',
         'models': {

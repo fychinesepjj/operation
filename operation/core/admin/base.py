@@ -50,7 +50,7 @@ class BaseModelAdmin(admin.ModelAdmin):
     def set_ordering_fields(self):
         base_ordering_fields = ['-created_time']
         if self.ordering:
-            self.ordering += base_ordering_fields
+            self.ordering = list(self.ordering) + base_ordering_fields
         else:
             self.ordering = base_ordering_fields
 

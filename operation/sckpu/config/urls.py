@@ -8,6 +8,7 @@ urlpatterns = patterns(
     '',
     url(r'^grappelli/', include('operation.core.customs.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^admin/', include(site.urls))
 )
 

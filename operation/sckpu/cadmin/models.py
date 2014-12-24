@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from operation.core.models.base import BaseModel
 from constants import FOOTER_CATEGORY
+from DjangoUeditor.models import UEditorField
 
 
 class Site(BaseModel):
@@ -27,7 +28,17 @@ class Site(BaseModel):
     owner = models.CharField(verbose_name=_('Owner'), max_length=64, blank=True)
     phone = models.CharField(verbose_name=_('Phone'), max_length=64, blank=True)
     address = models.CharField(verbose_name=_('Address'), max_length=256, blank=True)
-    introduction = models.TextField(verbose_name=_('Site introduction'))
+    introduction = UEditorField(
+        verbose_name=_('Site introduction'),
+        width=800,
+        height=300,
+        toolbars="full",
+        imagePath="images",
+        filePath="files",
+        upload_settings={"imageMaxSize": 1204000},
+        settings={},
+        command=None,
+        blank=True)
 
     def __unicode__(self):
         return self.name
@@ -68,7 +79,17 @@ class FooterCategory(BaseModel):
 
 class Project(BaseModel):
     title = models.CharField(verbose_name=_('Project Title'), max_length=256)
-    content = models.TextField(verbose_name=_('Project Content'))
+    content = UEditorField(
+        verbose_name=_('Project Content'),
+        width=800,
+        height=300,
+        toolbars="full",
+        imagePath="images",
+        filePath="files",
+        upload_settings={"imageMaxSize": 1204000},
+        settings={},
+        command=None,
+        blank=True)
     image = models.ImageField(
         upload_to='images',
         null=True,
@@ -77,7 +98,7 @@ class Project(BaseModel):
         help_text=_('Please upload JPEG, PNG, GIF files, size: 64x64')
     )
     ordering = models.PositiveIntegerField(_('ordering'), default=1)
-    promote = mmodels.BooleanField(default=False, verbose_name=_("Promote"))
+    promote = models.BooleanField(default=False, verbose_name=_("Promote"))
 
     def __unicode__(self):
         return u'%s' % (self.title)
@@ -105,7 +126,17 @@ class Member(BaseModel):
     name = models.CharField(verbose_name=_('Member Name'), max_length=64)
     career = models.CharField(verbose_name=_('Career'), max_length=128)
     title = models.CharField(verbose_name=_('title'), max_length=256)
-    content = models.TextField(verbose_name=_('Member About'))
+    content = UEditorField(
+        verbose_name=_('Member About'),
+        width=800,
+        height=300,
+        toolbars="full",
+        imagePath="images",
+        filePath="files",
+        upload_settings={"imageMaxSize": 1204000},
+        settings={},
+        command=None,
+        blank=True)
     portrait = models.ImageField(
         upload_to='images',
         null=True,
@@ -131,7 +162,7 @@ class Member(BaseModel):
 
 
 class Home(BaseModel):
-    name = models.CharField(verbose_name=_('Home Name'), max_length=64)
+    name = models.CharField(verbose_name=_('Home Name'), max_length=128)
 
     def __unicode__(self):
         return u'%s' % (self.name)
@@ -142,7 +173,8 @@ class Home(BaseModel):
 
 
 class NavGuide(BaseModel):
-    name = models.CharField(verbose_name=_('Guide Name'), max_length=64)
+    name = models.CharField(verbose_name=_('Guide Name'), max_length=128)
+    link = models.CharField(verbose_name=_('Guide Link'), max_length=128)
     image = models.ImageField(
         upload_to='images',
         null=True,
@@ -172,7 +204,7 @@ class NavList(BaseModel):
     )
     title = models.CharField(verbose_name=_('Nav Title'), max_length=256)
     sub_title = models.CharField(verbose_name=_('Nav Sub Title'), max_length=256)
-    home = models.OneToOneField("Home", verbose_name=_('Home Page'), related_name="navlist")
+    home = models.ForeignKey("Home", verbose_name=_('Home Page'), related_name="navlist")
 
     def __unicode__(self):
         return u'%s' % (self.title)
@@ -180,6 +212,3 @@ class NavList(BaseModel):
     class Meta:
         verbose_name = _('Nav List')
         verbose_name_plural = _('Nav List')
-
-
-

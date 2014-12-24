@@ -23,11 +23,6 @@ class WebSiteAdmin(BaseModelAdmin):
         }),
     )
 
-    class Media:
-        js = ('/static/tiny_mce/tiny_mce.js',
-              '/static/tinymce_setup/tinymce_setup.js',
-                )
-
 
 class FooterCategoryAdmin(BaseModelAdmin):
     list_display = ('ordering', 'id', 'name', 'level', 'link', 'icon_class', 'created_time')
@@ -58,11 +53,6 @@ class ProjectAdmin(BaseModelAdmin):
         }),
     )
 
-    class Media:
-        js = ('/static/tiny_mce/tiny_mce.js',
-              '/static/tinymce_setup/tinymce_setup.js',
-                )
-
 
 class MemberAdmin(BaseModelAdmin):
     list_display = ('ordering', 'id', 'name', 'career', 'created_time')
@@ -79,11 +69,6 @@ class MemberAdmin(BaseModelAdmin):
         }),
     )
 
-    class Media:
-        js = ('/static/tiny_mce/tiny_mce.js',
-              '/static/tinymce_setup/tinymce_setup.js',
-                )
-
 
 class MemberInlineAdmin(BaseModelInline, admin.StackedInline):
     model = Member
@@ -93,7 +78,7 @@ class MemberInlineAdmin(BaseModelInline, admin.StackedInline):
     }
     '''
     inline_classes = ('grp-collapse grp-open',)
-    fields = ('name', 'career', 'portrait', 'title', 'content')
+    fields = ('ordering', 'name', 'career', 'portrait', 'title', 'content')
     sortable_field_name = 'ordering'
     extra = 1
 
@@ -107,6 +92,10 @@ class TeamAdmin(BaseModelAdmin):
         (_('Basic'), {
             'fields': ('title', 'sub_title'),
         }),
+        (_("Members"), {
+            "classes": ("placeholder members-group", ),
+            "fields": (),
+        }),
         (_('Other'), {
             'fields': (('created_time', 'modified_time', 'creator', 'modifier')),
         }),
@@ -116,9 +105,9 @@ class TeamAdmin(BaseModelAdmin):
 
 class NavListInline(BaseModelInline, admin.StackedInline):
     model = NavList
-    can_delete = False
-    max_num = 1
-    fields = ('name', 'title', 'sub_title', 'image')
+    extra = 1
+    max_num = 3
+    fields = ('title', 'sub_title', 'image')
     inline_classes = ('grp-collapse grp-open',)
 
 
@@ -126,7 +115,7 @@ class NavGuideInline(BaseModelInline, admin.StackedInline):
     model = NavGuide
     can_delete = False
     max_num = 1
-    fields = ('title', 'sub_title', 'image')
+    fields = ('name', 'title', 'sub_title', 'image')
     inline_classes = ('grp-collapse grp-open',)
 
 
@@ -137,13 +126,13 @@ class HomeAdmin(BaseModelAdmin):
 
     fieldsets = (
         (_('Basic'), {
-            'fields': ('name'),
+            'fields': ('name', ),
         }),
-        ("NavGuide Targets", {
+        (_("NavGuide Targets"), {
             "classes": ("placeholder navguide-group", ),
             "fields": (),
         }),
-        ("Navlist Targets", {
+        (_("Navlist Targets"), {
             "classes": ("placeholder navlist-group", ),
             "fields": (),
         }),
@@ -151,6 +140,7 @@ class HomeAdmin(BaseModelAdmin):
             'fields': (('created_time', 'modified_time', 'creator', 'modifier')),
         }),
     )
+
     inlines = [NavGuideInline, NavListInline]
 
 
@@ -160,4 +150,3 @@ site.register(Member, MemberAdmin)
 site.register(Project, ProjectAdmin)
 site.register(Home, HomeAdmin)
 site.register(FooterCategory, FooterCategoryAdmin)
-
