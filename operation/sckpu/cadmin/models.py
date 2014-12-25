@@ -3,19 +3,20 @@ from django.utils.translation import ugettext_lazy as _
 from operation.core.models.base import BaseModel
 from constants import FOOTER_CATEGORY
 from DjangoUeditor.models import UEditorField
+from ajaximage.fields import AjaxImageField
 
 
 class Site(BaseModel):
     name = models.CharField(verbose_name=_('Site Name'), max_length=256)
     domain = models.CharField(verbose_name=_('Site Domain'), max_length=128)
-    logo = models.ImageField(
+    logo = AjaxImageField(
         upload_to='images',
         null=True,
         blank=True,
         verbose_name=_('Logo'),
         help_text=_('Please upload JPEG, PNG, GIF files, size: 64x64')
     )
-    qr_code = models.ImageField(
+    qr_code = AjaxImageField(
         upload_to='images',
         null=True,
         blank=True,
@@ -33,8 +34,8 @@ class Site(BaseModel):
         width=800,
         height=300,
         toolbars="full",
-        imagePath="images",
-        filePath="files",
+        imagePath="images/",
+        filePath="files/",
         upload_settings={"imageMaxSize": 1204000},
         settings={},
         command=None,
@@ -84,13 +85,13 @@ class Project(BaseModel):
         width=800,
         height=300,
         toolbars="full",
-        imagePath="images",
-        filePath="files",
+        imagePath="images/",
+        filePath="files/",
         upload_settings={"imageMaxSize": 1204000},
         settings={},
         command=None,
         blank=True)
-    image = models.ImageField(
+    image = AjaxImageField(
         upload_to='images',
         null=True,
         blank=True,
@@ -131,13 +132,13 @@ class Member(BaseModel):
         width=800,
         height=300,
         toolbars="full",
-        imagePath="images",
-        filePath="files",
+        imagePath="images/",
+        filePath="files/",
         upload_settings={"imageMaxSize": 1204000},
         settings={},
         command=None,
         blank=True)
-    portrait = models.ImageField(
+    portrait = AjaxImageField(
         upload_to='images',
         null=True,
         blank=True,
@@ -175,7 +176,7 @@ class Home(BaseModel):
 class NavGuide(BaseModel):
     name = models.CharField(verbose_name=_('Guide Name'), max_length=128)
     link = models.CharField(verbose_name=_('Guide Link'), max_length=128)
-    image = models.ImageField(
+    image = AjaxImageField(
         upload_to='images',
         null=True,
         blank=True,
@@ -195,7 +196,7 @@ class NavGuide(BaseModel):
 
 
 class NavList(BaseModel):
-    image = models.ImageField(
+    image = AjaxImageField(
         upload_to='images',
         null=True,
         blank=True,

@@ -1,5 +1,5 @@
 # coding:utf-8
-# Django 1.6 settings for operation project.
+# Django 1.7 settings for operation project.
 import os
 from django.utils.translation import ugettext_lazy as _
 
@@ -22,6 +22,7 @@ INSTALLED_APPS = (
     'grappelli.dashboard',
     'grappelli',
     'DjangoUeditor',
+    'ajaximage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +42,7 @@ MIDDLEWARE_CLASSES = (
 )
 ROOT_URLCONF = 'config.urls'
 WSGI_APPLICATION = 'config.wsgi.application'
-
+AJAXIMAGE_AUTH_TEST = lambda u: True
 
 # Database
 MONGODB_CONF = 'mongodb://localhost:27017'
@@ -75,10 +76,10 @@ LOCALE_PATHS = (
 )
 
 # Static
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/var/app/data/sckpu'
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/var/app/data'
-MEDIA_URL = 'http://localhost/'
-STATIC_ROOT = '/var/app/releases/sckpu/current/static'
+STATIC_ROOT = '/var/app/static/sckpu'
 #STATICFILES_DIRS = (,)
 
 STATICFILES_FINDERS = (
@@ -156,14 +157,6 @@ LOGGING = {
         },
     }
 }
-
-'''
-'cadmin': {
-    'title': 'abc',
-    'models': {'cadmin.models.PushMessage': {'title': 'push message', 'order': 2}},
-    'order': 1,
-},
-'''
 
 APP_MENU_LIST = {
     'cadmin': {
