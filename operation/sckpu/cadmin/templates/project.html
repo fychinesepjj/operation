@@ -1,131 +1,25 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-  <head>
-    <title>Home</title>
-    <meta name="keywords" content="关键词" />
-    <meta name="description" content="描述" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/main.css">
+{% extends "base.html" %}{% load url from future %}{% load static %}
 
-    <script src="js/jquery.js"></script>
-    <script src="js/base.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/respond.js"></script>
-  </head>
-  <body>
-    <div class="layout container-layout padding-large-top padding-big-bottom bg-white-opacity fixed" id="header">
-          <div class="line">
-            <div class="xl12 xs4 xm6 xb5 text-center">
-              <button class="button icon-navicon float-right" data-target="#header-nav"></button>
-              <a href="#"><img id="logo" src="image/logo2.jpg" alt="logo" /></a>
-            </div>
-            <div class="xl12 xs8 xm6 xb7 padding-nav-top">
-                <ul class="nav nav-menu nav-inline nav-navicon" id="header-nav">
-                  <li  class="active"><a href="index.html">首页</a></li>
-                  <li><a href="about.html">简介</a></li>
-                  <li><a href="team.html">咨询团队</a></li>
-                  <li><a href="project.html">成功案例</a></li>
-                  <li><a href="contact.html">联系我们</a></li>
-                  </li>
-                </ul>
-             </div>
-          </div>
-    </div>
+{% block title %}<title>成功案例</title>{% endblock %}
+
+{% block content %}
     <div class="layout project-list">
+      {% for project in projects %}
       <div class="line project">
-         <div class="media media-x">
+         <div class="media media-x {{ project.display_style }}">
           <div class="project-header">
-              <h2>中国人自己的前端框架的前端框</h2>
-              <p>国内一款开源的专业响应式网页前端框架，由HTML、CSS、Javascrip三者组合应用</p>
+              <h2>{{ project.title }}</h2>
+              <p>{{ project.sub_title }}</p>
           </div>
           <div class="project-body">
-              <img src="./image/apple.png" class="radius project-img" alt="img">
+              <img src="{{ project.image.url }}" class="radius project-img" alt="img">
          <div class="media-body">
-        <h2 class=" text-center">国内一款开源的专业响应式网页前端框架</h2>
-        <p style="text-align:center;"><img src="./image/pic.jpg" width="180" /></p>
-       <p> 国内一款开源的专业响应式网页前端框架，由HTML、CSS、Javascrip三者组合应用。提供的CSS、元件、动画、组件、模块等样式实现绝大多数的网页特效与响应功能，像玩积木、拼图游戏一样快速简单而富有乐趣的做前端开发。
-        不用学习CSS,不用学习HTML，也不用学习Javascrtip，就可以快速的掌握前端开发。
-        国内一款开源的专业响应式网页前端框架，由HTML、CSS、Javascrip三者组合应用。提供的CSS、元件、动画、组件、模块等样式实现绝大多数的网页特效与响应功能，像玩积木、拼图游戏一样快速简单而富有乐趣的做前端开发。
-        不用学习CSS,不用学习HTML，也不用学习Javascrtip，就可以快速的掌握前端开发。</p>
-              <p class="more"><a href="#" class="float-right text-red" >+ View Details</a></p>
+            {{ project.content|safe }}
+            <p class="more"><a href="{% url 'project_detail' project.id %}" class="text-red" >+ View Details</a></p>
               </div>
            </div>
         </div>
       </div>
-
-       <div class="line project  right-style">
-         <div class="media media-x">
-          <div class="project-header">
-              <h2>中国人自己的前端框架的前端框</h2>
-              <p>国内一款开源的专业响应式网页前端框架，由HTML、CSS、Javascrip三者组合应用</p>
-          </div>
-          <div class="project-body">
-              <img src="./image/apple.png" class="radius project-img" alt="img">
-              <div class="media-body">
-    国内一款开源的专业响应式网页前端框架，由HTML、CSS、Javascrip三者组合应用。提供的CSS、元件、动画、组件、模块等样式实现绝大多数的网页特效与响应功能，像玩积木、拼图游戏一样快速简单而富有乐趣的做前端开发。
-        不用学习CSS,不用学习HTML，也不用学习Javascrtip，就可以快速的掌握前端开发。
-              <p class="more"><a href="#" class="float-right text-red" >+ View Details</a></p>
-              </div>
-           </div>
-        </div>
-      </div>
- 
-      <div class="line project">
-         <div class="media media-x">
-          <div class="project-header">
-              <h2>中国人自己的前端框架的前端框</h2>
-              <p>国内一款开源的专业响应式网页前端框架，由HTML、CSS、Javascrip三者组合应用</p>
-          </div>
-          <div class="project-body">
-              <img src="./image/apple.png" class="radius project-img" alt="img">
-              <div class="media-body">
-    国内一款开源的专业响应式网页前端框架，由HTML、CSS、Javascrip三者组合应用。提供的CSS、元件、动画、组件、模块等样式实现绝大多数的网页特效与响应功能，像玩积木、拼图游戏一样快速简单而富有乐趣的做前端开发。
-        不用学习CSS,不用学习HTML，也不用学习Javascrtip，就可以快速的掌握前端开发。
-              <p class="more"><a href="#" class="float-right text-red" >+ View Details</a></p>
-              </div>
-           </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
-    <div class="container-layout  bg-inverse"  id="footer" >
-      <div id="footer-list">
-        <div class="line">
-            <div class="table-responsive  xm1-move xm7  xb3-move xb6  hidden-l hidden-s">
-                <ul class="nav nav-sitemap">
-                  <li><span class="title" href="#">新闻资讯</span>
-                    <ul>
-                      <li><a href="#"><span class="icon-facebook-square text-big"></span>新闻公告</a></li>
-                      <li><a href="#"><span class="icon-twitter text-big"></span>业界资讯</a></li>
-                      <li><a href="#"><span class="icon-linkedin text-big"></span>媒体报道</a></li>
-                    </ul>
-                  </li>
-                  <li><span  class="title" href="#">产品中心</span>
-                    <ul>
-                      <li><a href="#"><span class="icon-pagelines text-big"></span>产品分类</a></li>
-                      <li><a href="#"><span class="icon-qq text-big"></span>产品品牌</a></li>
-                      <li><a href="#"><span class="icon-skype text-big"></span>产品特色</a></li>
-                    </ul>
-                  </li>
-                  <li><span  class="title" href="#">技术反馈</span>
-                    <ul>
-                      <li><a href="#"><span class="icon-youtube text-big"></span>售后服务</a></li>
-                      <li><a href="#"><span class="icon-weibo text-big"></span>营销网络</a></li>
-                      <li><a href="#"><span class="icon-wordpress text-big"></span>服务支持</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <div class="text-center rights">版权所有 © Pintuer.com All Rights Reserved，图ICP备：380959609</div>
-            </div>
-            <div class="xl12 xs12 xm4 xb3 text-center" id="qrcode">
-                <img src="./image/qrcode.png" />
-                <p>@xiaoxin 关注威信</p>
-            </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+{% endblock %}

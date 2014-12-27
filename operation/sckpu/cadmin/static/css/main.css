@@ -26,7 +26,7 @@ body,html{
     padding-top:10px;
 }
 .nav-box-bgimg{
-    background: #999 url("../image/nav-bg.jpg") no-repeat center center;
+    background: #ddd no-repeat center center;
     background-size:cover;
     background-attachment: fixed;
 }
@@ -82,23 +82,29 @@ body,html{
 .cases h3{
     font-size:18px;
     color:#333;
+    margin-bottom:5px;
 }
 p.metadata{
     text-transform: uppercase;
-    color: #cbcbcb;
-    font-size:12px;
+    color: #ccc;
+    font-size:14px;
 }
 .cases-img{
     width:87.5%;
     margin-bottom: 1.5rem;
 }
-p.cases-content{
+div.cases-content{
     width:70%;
     padding:0 10px;
     margin:0 auto;
     font-size:14px;
     color:#666;
     line-height:1.5em;
+}
+div.cases-content p{
+    margin:0;
+    line-height: 1.5em;
+    font-size:14px;
 }
 
 .mailus{
@@ -157,7 +163,6 @@ p.cases-content{
     padding:30px 0 20px 0;
 }
 .project .media{
-
     border-bottom:2px solid #f2f2f2;
     padding:30px 10px;
 }
@@ -172,7 +177,7 @@ p.cases-content{
 .project-header p{
     font-size:16px;
     line-height:1.5em;
-    margin-bottom:60px;
+    margin-bottom:30px;
     color:#666;
 }
 .project-body .media-body{
@@ -180,13 +185,31 @@ p.cases-content{
     line-height:28px;
     padding: 10px 10% 10px 10px;
 }
+.project-body .more{
+    text-align: right;
+}
+.right-style .project-body .more{
+    text-align: left;
+}
+
 .media p{line-height:2em;}
 .project-img{
     width:50%;
     float:left;
     margin-bottom:10px;
+    margin-right:10px;
+}
+.right-style .project-img{
+  margin-left:10px;
+ margin-right:0;
 }
 
+.no-style .project-body img{
+    display: none;
+}
+.no-style  .project-header p{
+    margin-bottom:10px;
+}
 
 .right-style .project-body img{
     float:right;
@@ -195,38 +218,45 @@ p.cases-content{
 .right-style .project-body .media-body{
     padding:10px 10px 10px 10%;
 }
+.full-style img{width: 100%;max-width: 800px}
+.full-style .project-body .media-body{padding-right: 10px;padding-top:20px;}
+.full-style .media {
+    border:none;
+    padding-top:0;
+}
+.full-style .project-body{text-align: center;}
 
 /* team */
 .name{font-weight:bold;}
-.rank{font-size:20px;color:#333;margin-bottom:10px;}
+.rank{font-size:14px;color:#666;margin-bottom:10px;}
 .team-mem-intro h3,.team-mem-star h3{font-size:24px;line-height:1.2em;color:#333;padding:10px 0;}
 .team-mem-intro p, .team-mem-star p{line-height:1.8em;font-size:16px;color:#666;text-align:justify;}
 
 .team-mem-star{margin-bottom:30px;border-bottom:1px solid #ddd;text-align:center;}
-.team-mem-star p,.team-mem-star h3{padding:5px 15%;}
-.team-mem-star h3{font-size:30px;}
-.team-mem-star p{font-size:18px;line-height:1.5em;}
+.team-mem-star p,.team-mem-star h3{padding:8px 15%;}
+
+.team-mem-star p{line-height:1.6em;}
 .team-mem-star img{width:280px;}
 
 .divider{
 width: 15%;
-border-top: 3px solid #666;
-height:70px;
+border-top: 2px solid #666;
+height:50px;
 }
 .page-title{width:60%;color:#999;border-bottom:1px solid #ccc;font-size:36px;padding-bottom:20px;color:#666;letter-spacing:2px;}
 .team-intro{padding:10px 30px;}
 .team-intro h2, .team-intro p{width:60%;color:#999;}
 .team-intro h2{border-bottom:none;}
-.team-intro p{font-size:16px;line-height:2em;margin-bottom:30px;}
+.team-intro p{font-size:20px;line-height:1.5em;margin-bottom:20px;}
 
 .team-mem{color:#999;padding:10px 0 30px 0;}
 .team-mem-intro{padding:10px 40% 10px 0;max-height:280px;overflow:hidden;}
 
 
 .team-pic{text-align:center}
-.team-pic .media-body p{font-size:16px;line-height:22px;padding:0 20px;text-align:center}
-.team-pic .media-body strong{font-size:20px;}
-.team-pic img{width:66%;margin-bottom:25px;}
+.team-pic .media-body p{font-size:14px;line-height:22px;padding:0 20px;text-align:center;color:#666;}
+.team-pic .media-body strong{font-size:20px;color:#333;}
+.team-pic img{width:66%;margin-bottom:15px;}
 
 /* contact */
 .contact{
@@ -271,4 +301,5 @@ height:70px;
     .nav a{padding-left:10%;}
     .team-mem-intro{padding-right:0 !important;}
     .team-mem-star p{padding:5px 0!important;}
+    .detail img{display:none !important;}
 }

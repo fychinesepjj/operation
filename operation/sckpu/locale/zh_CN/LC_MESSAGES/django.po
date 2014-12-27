@@ -1,0 +1,362 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-27 18:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: cadmin/admin.py:13 cadmin/admin.py:34 cadmin/admin.py:49 cadmin/admin.py:65
+#: cadmin/admin.py:94 cadmin/admin.py:132
+msgid "Basic"
+msgstr "基本设置"
+
+#: cadmin/admin.py:16 config/settings.py:185
+msgid "User"
+msgstr "用户管理"
+
+#: cadmin/admin.py:19
+msgid "Info"
+msgstr "基本信息"
+
+#: cadmin/admin.py:22 cadmin/admin.py:37 cadmin/admin.py:52 cadmin/admin.py:68
+#: cadmin/admin.py:101 cadmin/admin.py:143
+msgid "Other"
+msgstr "其他"
+
+#: cadmin/admin.py:97 cadmin/models.py:172
+msgid "Members"
+msgstr "团队成员"
+
+#: cadmin/admin.py:135
+msgid "NavGuide Targets"
+msgstr "首页引导图片"
+
+#: cadmin/admin.py:139
+msgid "Navlist Targets"
+msgstr "首页列表图片"
+
+#: cadmin/constants.py:5
+msgid "Root"
+msgstr "根分类"
+
+#: cadmin/constants.py:6
+msgid "First"
+msgstr "第一层"
+
+#: cadmin/constants.py:10
+msgid "Left"
+msgstr "图片左侧排列"
+
+#: cadmin/constants.py:11
+msgid "Right"
+msgstr "图片右侧排列"
+
+#: cadmin/constants.py:12
+msgid "None"
+msgstr "无图片"
+
+#: cadmin/models.py:10
+msgid "Site Name"
+msgstr "站点名称"
+
+#: cadmin/models.py:11
+msgid "Site Domain"
+msgstr "站点域名"
+
+#: cadmin/models.py:16
+msgid "Logo"
+msgstr "Logo"
+
+#: cadmin/models.py:17
+msgid "Please upload JPEG, PNG, GIF files, size: 420X120"
+msgstr "请上传尺寸在420X120，jpeg，png，gif图片"
+
+#: cadmin/models.py:23
+msgid "QR Code"
+msgstr "二维码"
+
+#: cadmin/models.py:24
+msgid "Please upload JPEG, PNG, GIF files, size: 300X300"
+msgstr "请上传尺寸在300X300，jpeg，png，gif图片"
+
+#: cadmin/models.py:26
+msgid "QR Link"
+msgstr "二维码链接"
+
+#: cadmin/models.py:27
+msgid "QR Name"
+msgstr "二维码名称"
+
+#: cadmin/models.py:28
+msgid "Copy Right"
+msgstr "网站版权"
+
+#: cadmin/models.py:29
+msgid "Owner"
+msgstr "联系人"
+
+#: cadmin/models.py:30
+msgid "Phone"
+msgstr "电话"
+
+#: cadmin/models.py:31
+msgid "Address"
+msgstr "地址"
+
+#: cadmin/models.py:33
+msgid "Site introduction"
+msgstr "网站简介"
+
+#: cadmin/models.py:48
+msgid "Backend Site"
+msgstr "网站"
+
+#: cadmin/models.py:49
+msgid "Backend Sites"
+msgstr "网站"
+
+#: cadmin/models.py:53
+msgid "Footer Item Name"
+msgstr "页脚列表名称"
+
+#: cadmin/models.py:54
+msgid "Footer Item Link"
+msgstr "页脚列表链接"
+
+#: cadmin/models.py:55
+msgid "level"
+msgstr "层"
+
+#: cadmin/models.py:56
+msgid "Footer Icon class"
+msgstr "页脚列表图标"
+
+#: cadmin/models.py:63
+msgid "parent"
+msgstr "父级分类"
+
+#: cadmin/models.py:64 cadmin/models.py:110 cadmin/models.py:125
+#: cadmin/models.py:158 cadmin/models.py:222
+msgid "ordering"
+msgstr "顺序"
+
+#: cadmin/models.py:77 cadmin/models.py:78
+msgid "Footer Category"
+msgstr "页脚分类"
+
+#: cadmin/models.py:83
+msgid "Project Title"
+msgstr "方案标题"
+
+#: cadmin/models.py:84
+msgid "Project Sub Title"
+msgstr "方案子标题"
+
+#: cadmin/models.py:86
+msgid "Project Content"
+msgstr "方案内容"
+
+#: cadmin/models.py:100
+msgid "Project Image"
+msgstr "方案图片"
+
+#: cadmin/models.py:101
+msgid "Please upload JPEG, PNG, GIF files, size: any"
+msgstr "请上传任意尺寸，jpeg，png，gif图片"
+
+#: cadmin/models.py:104
+msgid "Display Style"
+msgstr "图片展示样式"
+
+#: cadmin/models.py:111
+msgid "Promote"
+msgstr "推送到首页"
+
+#: cadmin/models.py:117 config/settings.py:176
+msgid "Project"
+msgstr "方案"
+
+#: cadmin/models.py:118
+msgid "Projects"
+msgstr "方案"
+
+#: cadmin/models.py:123
+msgid "Team Title"
+msgstr "团队标题"
+
+#: cadmin/models.py:124
+msgid "Team Sub Title"
+msgstr "团队子标题"
+
+#: cadmin/models.py:131 config/settings.py:177
+msgid "Team"
+msgstr "团队"
+
+#: cadmin/models.py:132
+msgid "Teams"
+msgstr "团队"
+
+#: cadmin/models.py:136
+msgid "Relate team"
+msgstr "相关团队"
+
+#: cadmin/models.py:137
+msgid "Member Name"
+msgstr "成员名称"
+
+#: cadmin/models.py:138
+msgid "Career"
+msgstr "成员职位/描述"
+
+#: cadmin/models.py:139
+msgid "title"
+msgstr "标题"
+
+#: cadmin/models.py:141
+msgid "Member About"
+msgstr "关于成员"
+
+#: cadmin/models.py:155
+msgid "Portrait"
+msgstr "头像"
+
+#: cadmin/models.py:156
+msgid "Please upload JPEG, PNG, GIF files, size: 330X330"
+msgstr "请上传尺寸在330X330，jpeg，png，gif图片"
+
+#: cadmin/models.py:171
+msgid "Member"
+msgstr "团队成员"
+
+#: cadmin/models.py:177
+msgid "Home Name"
+msgstr "首页名称"
+
+#: cadmin/models.py:183 cadmin/models.py:184 cadmin/models.py:202
+#: cadmin/models.py:223
+msgid "Home Page"
+msgstr "首页"
+
+#: cadmin/models.py:189
+msgid "Guide Name"
+msgstr "Button名称"
+
+#: cadmin/models.py:190
+msgid "Guide Link"
+msgstr "Button链接"
+
+#: cadmin/models.py:195
+msgid "Guide Image"
+msgstr "背景图片"
+
+#: cadmin/models.py:196
+msgid "Please upload JPEG, PNG, GIF files, size: 1440X571"
+msgstr "请上传尺寸在1440X571，jpeg，png，gif图片"
+
+#: cadmin/models.py:198
+msgid "Guide Title"
+msgstr "标题"
+
+#: cadmin/models.py:199
+msgid "Guide Sub Title"
+msgstr "子标题"
+
+#: cadmin/models.py:200
+msgid "Slogan Title"
+msgstr "口号-标题"
+
+#: cadmin/models.py:201
+msgid "Slogan Sub Title"
+msgstr "口号-子标题"
+
+#: cadmin/models.py:208 cadmin/models.py:209
+msgid "Nav Guide"
+msgstr "首页引导"
+
+#: cadmin/models.py:217
+msgid "List Image"
+msgstr "列表图片"
+
+#: cadmin/models.py:218
+msgid "Please upload JPEG, PNG, GIF files, size: 150X150"
+msgstr "请上传尺寸在150X150，jpeg，png，gif图片"
+
+#: cadmin/models.py:220
+msgid "Nav Title"
+msgstr "列表标题"
+
+#: cadmin/models.py:221
+msgid "Nav Sub Title"
+msgstr "列表子标题"
+
+#: cadmin/models.py:236 cadmin/models.py:237
+msgid "Nav List"
+msgstr "导航列表"
+
+#: config/settings.py:171
+msgid "SCKPU"
+msgstr "SCKPU管理"
+
+#: config/settings.py:173
+msgid "Site"
+msgstr "站点"
+
+#: config/settings.py:174
+msgid "Footer"
+msgstr "页脚"
+
+#: config/settings.py:175
+msgid "Home"
+msgstr "首页"
+
+#: config/settings.py:182
+msgid "Auth"
+msgstr "帐号管理"
+
+#: config/settings.py:184
+msgid "Group"
+msgstr "分组管理"
+
+#: config/settings.py:186
+msgid "Admin Log"
+msgstr "操作日志"
+
+#: dashboard.py:62
+msgid "Media Management"
+msgstr "管理"
+
+#: dashboard.py:66
+msgid "Change Password"
+msgstr "修改秘密"
+
+#: dashboard.py:71
+msgid "Logout"
+msgstr "注销"
+
+#: dashboard.py:80
+msgid "Support"
+msgstr "支持"
+
+#: dashboard.py:84
+msgid "Icons Class"
+msgstr "页脚所有图标"
+
+#: dashboard.py:89
+msgid "Baidu.com"
+msgstr "百度"
+
+#: dashboard.py:98
+msgid "Recent Actions"
+msgstr "最近操作"

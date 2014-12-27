@@ -12,6 +12,7 @@ FILE_CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 PROJECT_ROOT = os.path.dirname(FILE_CURRENT_PATH)
 root_index = FILE_CURRENT_PATH.find(BASE_OPERATION)
 SITE_ROOT = FILE_CURRENT_PATH[:root_index + len(BASE_OPERATION) + 1]
+CORE_ROOT = os.path.dirname(PROJECT_ROOT)
 
 SECRET_KEY = 'elgw@*53y*q&0i&g_$5c1-lj$ks-h2a9lhve@(9l4#qerz@049'
 ALLOWED_HOSTS = ['*']
@@ -72,8 +73,9 @@ USE_L10N = True
 USE_TZ = True
 LOCALE_PATHS = (
     '%s/%s' % (PROJECT_ROOT, '/locale'),
-    '%s/%s' % (SITE_ROOT, '/core/locale')
+    '%s/%s' % (CORE_ROOT, '/core/locale')
 )
+
 
 # Static
 MEDIA_URL = '/media/'
@@ -86,6 +88,12 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.FileSystemFinder',
 )
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
@@ -93,7 +101,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.request',
-    'django.contrib.messages.context_processors.messages'
+    'operation.sckpu.config.context_processors.site_info',
+    'operation.sckpu.config.context_processors.site_footer'
+    #'django.contrib.messages.context_processors.messages',
 )
 
 # Grappelli
@@ -160,17 +170,21 @@ LOGGING = {
 
 APP_MENU_LIST = {
     'cadmin': {
-        'title': 'SCKPU',
+        'title': _('SCKPU'),
         'models': {
-            'cadmin.models.*': {},
+            'cadmin.models.Site': {'title': _('Site'), 'order': 1},
+            'cadmin.models.FooterCategory': {'title': _('Footer'), 'order': 2},
+            'cadmin.models.Home': {'title': _('Home'), 'order': 3},
+            'cadmin.models.Project': {'title': _('Project'), 'order': 4},
+            'cadmin.models.Team': {'title': _('Team'), 'order': 5},
         },
         'order': 1,
     },
     'auth': {
-        'title': 'Auth',
+        'title': _('Auth'),
         'models': {
-            'django.contrib.auth.models.Group': {'title': 'Group', 'order': 1},
-            'django.contrib.auth.models.User': {'title': 'User', 'order': 2},
+            'django.contrib.auth.models.Group': {'title': _('Group'), 'order': 1},
+            'django.contrib.auth.models.User': {'title': _('User'), 'order': 2},
             'django.contrib.admin.models.LogEntry': {'title': _('Admin Log'), 'order': 3},
         },
         'order': 2,

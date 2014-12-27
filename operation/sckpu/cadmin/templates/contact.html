@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}<title>Contact</title>{% endblock %}
+{% block title %}<title>联系我们</title>{% endblock %}
 
 {% block content %}
   <div class="line contact">
@@ -8,21 +8,21 @@
      <div class="contact-detail">
           <dl>
             <dt>联系人</dt>
-            <dd>天下无贼</dd>
+            <dd>{{site.name}}</dd>
           </dl>
 
           <dl>
             <dt>联系电话</dt>
-            <dd>12345678913456</dd>
+            <dd>{{site.phone}}</dd>
           </dl>
 
           <dl>
             <dt>通讯地址</dt>
-            <dd>是一款开源的专业网页前端UI解决方案</dd>
+            <dd>{{site.address}}</dd>
           </dl>
      </div>
   </div>
-  <div class="line" style="width:100%;height:500px;" id="dituContent">
+  <div class="line" style="width:100%;height:250px;" id="dituContent">
   </div>
 {% endblock %}
 

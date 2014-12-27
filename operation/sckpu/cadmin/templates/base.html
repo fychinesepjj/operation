@@ -3,8 +3,8 @@
   <head>
     {% block title %}<title>Base</title>{% endblock %}
     {% block meta %}
-    <meta name="keywords" content="关键词" />
-    <meta name="description" content="描述" />
+    <meta name="keywords" content="sckpu" />
+    <meta name="description" content="四川;企业咨询;sckpu" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,7 +15,8 @@
     {% block css %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     {% endblock %}
-
+    {% block extracss %}
+    {% endblock %}
     <script src="{% static 'js/respond.js' %}"></script>
   </head>
   <body>
@@ -24,15 +25,15 @@
           <div class="line">
             <div class="xl12 xs4 xm6 xb5 text-center">
               <button class="button icon-navicon float-right" data-target="#header-nav"></button>
-              <a href="#"><img id="logo" src="{% static 'image/logo2.jpg' %}" alt="logo" /></a>
+              <a href="#"><img id="logo" src="{{ site.logo.url }}" alt="logo" /></a>
             </div>
             <div class="xl12 xs8 xm6 xb7 padding-nav-top">
                 <ul class="nav nav-menu nav-inline nav-navicon" id="header-nav">
-                  <li  class="active"><a href="index/">首页</a></li>
-                  <li><a href="/about">简介</a></li>
-                  <li><a href="/team">咨询团队</a></li>
-                  <li><a href="/project">成功案例</a></li>
-                  <li><a href="/contact">联系我们</a></li>
+                  <li  class="active"><a href="{% url 'index' %}">首页</a></li>
+                  <li><a href="{% url 'about' %}">简介</a></li>
+                  <li><a href="{% url 'team' %}">咨询团队</a></li>
+                  <li><a href="{% url 'project' %}">成功案例</a></li>
+                  <li><a href="{% url 'contact' %}">联系我们</a></li>
                   </li>
                 </ul>
              </div>
@@ -48,33 +49,23 @@
         <div class="line">
             <div class="table-responsive  xm1-move xm7  xb3-move xb6  hidden-l hidden-s">
                 <ul class="nav nav-sitemap">
-                  <li><span class="title" href="#">新闻资讯</span>
+                  {% for item in footer %}
+                  <li><span class="title" href="{{ item.link }}">{{ item.name }}</span>
+                    {% if item.sub_items %}
                     <ul>
-                      <li><a href="#"><span class="icon-facebook-square text-big"></span>新闻公告</a></li>
-                      <li><a href="#"><span class="icon-twitter text-big"></span>业界资讯</a></li>
-                      <li><a href="#"><span class="icon-linkedin text-big"></span>媒体报道</a></li>
+                      {% for sub_item in item.sub_items %}
+                      <li><a href="{{ sub_item.link }}"><span class="{{ sub_item.icon_class }}"></span>{{ sub_item.name }}</a></li>
+                      {% endfor %}
                     </ul>
+                    {% endif %}
                   </li>
-                  <li><span  class="title" href="#">产品中心</span>
-                    <ul>
-                      <li><a href="#"><span class="icon-pagelines text-big"></span>产品分类</a></li>
-                      <li><a href="#"><span class="icon-qq text-big"></span>产品品牌</a></li>
-                      <li><a href="#"><span class="icon-skype text-big"></span>产品特色</a></li>
-                    </ul>
-                  </li>
-                  <li><span  class="title" href="#">技术反馈</span>
-                    <ul>
-                      <li><a href="#"><span class="icon-youtube text-big"></span>售后服务</a></li>
-                      <li><a href="#"><span class="icon-weibo text-big"></span>营销网络</a></li>
-                      <li><a href="#"><span class="icon-wordpress text-big"></span>服务支持</a></li>
-                    </ul>
-                  </li>
+                {% endfor %}
                 </ul>
-                <div class="text-center rights">版权所有 © Pintuer.com All Rights Reserved，图ICP备：380959609</div>
+                <div class="text-center rights">{{ site.copy_right }}</div>
             </div>
             <div class="xl12 xs12 xm4 xb3 text-center" id="qrcode">
-                <img src="{% static 'image/qrcode.png' %}" />
-                <p>@xiaoxin 关注威信</p>
+                <img src="{{ site.qr_code.url }}" />
+                <p><a href="{{ site.link }}">{{ site.qr_name }}</a></p>
             </div>
         </div>
       </div>
@@ -85,6 +76,8 @@
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/base.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    {% endblock %}
+    {% block extrajs %}
     {% endblock %}
   </body>
 </html>

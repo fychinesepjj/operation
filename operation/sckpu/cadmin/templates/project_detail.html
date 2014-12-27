@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% load static %}
+
+{% block title %}<title>{{ project.title }}</title>{% endblock %}
+
+{% block content %}
+    <div class="layout project-list">
+      <div class="line project full-style">
+         <div class="media media-x">
+          <div class="project-header">
+              <h2>{{ project.title }}</h2>
+              <p>{{ project.sub_title }}</p>
+          </div>
+          <div class="project-body">
+              <img src="{{ project.image.url }}" class="radius" alt="img">
+         <div class="media-body">
+            {{ project.content|safe }}
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -6,8 +6,6 @@ To activate your index dashboard add the following to your settings.py::
     GRAPPELLI_INDEX_DASHBOARD = 'home.dashboard.CustomIndexDashboard'
 """
 from django.utils.translation import ugettext_lazy as _
-from django.core.urlresolvers import reverse
-
 from grappelli.dashboard import modules, Dashboard
 from grappelli.dashboard.utils import get_admin_site_name
 
@@ -18,8 +16,7 @@ class CustomIndexDashboard(Dashboard):
     """
 
     def init_with_context(self, context):
-        site_name = get_admin_site_name(context)
-
+        #site_name = get_admin_site_name(context)
         '''
         # append a group for "Administration" & "Applications"
         self.children.append(modules.Group(
@@ -84,8 +81,8 @@ class CustomIndexDashboard(Dashboard):
             column=2,
             children=[
                 {
-                    'title': _('Operation Documentation'),
-                    'url': 'http://baina-moss/appstore/Shared%20Documents/Products/Seabed/Push%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E.docx',
+                    'title': _('Icons Class'),
+                    'url': '/static/images/icons.png',
                     'external': True,
                 },
                 {
@@ -95,16 +92,6 @@ class CustomIndexDashboard(Dashboard):
                 },
             ]
         ))
-
-        '''
-        # append a feed module
-        self.children.append(modules.Feed(
-            _('Latest Django News'),
-            column=2,
-            feed_url='http://www.djangoproject.com/rss/weblog/',
-            limit=5
-        ))
-        '''
 
         # append a recent actions module
         self.children.append(modules.RecentActions(

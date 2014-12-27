@@ -1,124 +1,45 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-  <head>
-    <title>Home</title>
-    <meta name="keywords" content="关键词" />
-    <meta name="description" content="描述" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/main.css">
+{% extends "base.html" %}{% load static %}
 
-    <script src="js/jquery.js"></script>
-    <script src="js/base.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/respond.js"></script>
-  </head>
-  <body>
-    <div class="layout container-layout padding-large-top padding-big-bottom bg-white-opacity fixed" id="header">
-          <div class="line">
-            <div class="xl12 xs4 xm6 xb5 text-center">
-              <button class="button icon-navicon float-right" data-target="#header-nav"></button>
-              <a href="#"><img id="logo" src="image/logo2.jpg" alt="logo" /></a>
-            </div>
-            <div class="xl12 xs8 xm6 xb7 padding-nav-top">
-                <ul class="nav nav-menu nav-inline nav-navicon" id="header-nav">
-                  <li  class="active"><a href="index.html">首页</a></li>
-                  <li><a href="about.html">简介</a></li>
-                  <li><a href="team.html">咨询团队</a></li>
-                  <li><a href="project.html">成功案例</a></li>
-                  <li><a href="contact.html">联系我们</a></li>
-                  </li>
-                </ul>
-             </div>
-          </div>
-    </div>
-
+{% block title %}<title>首页</title>{% endblock %}
+{% block extracss %}
+  <style>
+  .nav-box-bgimg {
+  background: #fff url("{{ home.navguide.image.url }}") no-repeat center center;
+  }
+  </style>
+{% endblock %}
+{% block content %}
       <div class="line keypoint text-center nav-box nav-box-bgimg">
-          <h1>Creative Digital Solutions</h1>
-          <p>国内优秀的HTML、CSS、JS跨屏响应式前端框架，自动适应电脑、平板、手机等设备，让前端开发更简单、快速、便捷。</p>
-          <p class="padding-big-top"><button class="button button-big bg-dot radius-rounded nav-box-button">View Solutions</button></p>
+          <h1>{{ home.navguide.title }}</h1>
+          <p>{{ home.navguide.sub_title }}</p>
+          <p class="padding-big-top"><a href="{{ home.navguide.link }}" class="button button-big bg-dot radius-rounded nav-box-button">{{ home.navguide.name }}</a></p>
       </div>
       <div class="line keypoint text-center intro">
             <div class="intro-area">
-                <h2>WHAT I DO</h2>
-                <p>I’m a designer at Google, where I work with a talented team of technologists to connect people and cultures across the world. Previously.</p>
+                <h2>{{ home.navguide.slogan_title }}</h2>
+                <p>{{ home.navguide.slogan_sub_title }}</p>
             </div>
       </div>
       <div class="line keypoint features text-center">
+        {% for nav_item in navlist %}
           <div class="xl12 xs6 xm4 xb4">
             <div class="media clearfix">
-              <a href="#"><img src="./image/venn.png" class="radius" alt="icons"></a>
+              <a href="#"><img src="{{ nav_item.image.url }}" class="radius" alt="icons"></a>
               <div class="media-body">
-                <h3>媒体标题</h3>
-                <p>拼图是优秀的响应式前端框架，自动适应电脑、平板、手机等设备，让前端开发更简单、便捷。</p>
+                <h3>{{ nav_item.title }}</h3>
+                <p>{{ nav_item.sub_title }}</p>
               </div>
             </div>
           </div>
-          <div class="xl12 xs6 xm4 xb4">
-            <div class="media clearfix">
-              <a href="#"><img src="./image/golden_rectangle.png" class="radius" alt="icons"></a>
-              <div class="media-body">
-                <h3>媒体标题</h3>
-                <p>拼图是优秀的响应式前端框架，自动适应电脑、平板、手机等设备，让前端开发更简单、便捷。</p>
-              </div>
-            </div>
-          </div>
-          <div class="xl12 xs6 xm4 xb4">
-            <div class="media clearfix">
-              <a href="#"><img src="./image/golden_triangle.png" class="radius" alt="icons"></a>
-              <div class="media-body">
-                <h3>媒体标题</h3>
-                <p>拼图是优秀的响应式前端框架，自动适应电脑、平板、手机等设备，让前端开发更简单、便捷。</p>
-              </div>
-            </div>
-          </div>
+       {% endfor %}
       </div>
+
+      {% for project in projects %}
       <div class="line keypoint cases text-center">
-            <img src="./image/apple.png" class="cases-img" title="Apple Concept">
-            <h3>Photo Sharing, Apple Notebook</h3>
-            <p class="metadata">2015 · SELF INITIATED · WEB</p>
-            <p class="cases-content">A fun, self-initiated design project that explores how Flickr can evolve and bring unique value to the online photo community. Competing against Instagram, Facebook, and 500px, perhaps Flickr can grow beyond photo sharing and become the premier platform for crowd-sourced photojournalism. </p>
+            <img src="{{ project.image.url }}" class="cases-img" title="Apple Concept">
+            <h3>{{ project.title }}</h3>
+            <p class="metadata">{{ project.sub_title }}</p>
+            <div class="cases-content">{{ project.content|safe }}</div>
       </div>
-
-
-    <div class="container-layout  bg-inverse"  id="footer" >
-      <div id="footer-list">
-        <div class="line">
-            <div class="table-responsive  xm1-move xm7  xb3-move xb6  hidden-l hidden-s">
-                <ul class="nav nav-sitemap">
-                  <li><span class="title" href="#">新闻资讯</span>
-                    <ul>
-                      <li><a href="#"><span class="icon-facebook-square text-big"></span>新闻公告</a></li>
-                      <li><a href="#"><span class="icon-twitter text-big"></span>业界资讯</a></li>
-                      <li><a href="#"><span class="icon-linkedin text-big"></span>媒体报道</a></li>
-                    </ul>
-                  </li>
-                  <li><span  class="title" href="#">产品中心</span>
-                    <ul>
-                      <li><a href="#"><span class="icon-pagelines text-big"></span>产品分类</a></li>
-                      <li><a href="#"><span class="icon-qq text-big"></span>产品品牌</a></li>
-                      <li><a href="#"><span class="icon-skype text-big"></span>产品特色</a></li>
-                    </ul>
-                  </li>
-                  <li><span  class="title" href="#">技术反馈</span>
-                    <ul>
-                      <li><a href="#"><span class="icon-youtube text-big"></span>售后服务</a></li>
-                      <li><a href="#"><span class="icon-weibo text-big"></span>营销网络</a></li>
-                      <li><a href="#"><span class="icon-wordpress text-big"></span>服务支持</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <div class="text-center rights">版权所有 © Pintuer.com All Rights Reserved，图ICP备：380959609</div>
-            </div>
-            <div class="xl12 xs12 xm4 xb3 text-center" id="qrcode">
-                <img src="./image/qrcode.png" />
-                <p>@xiaoxin 关注威信</p>
-            </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+      {% endfor %}
+{% endblock %}

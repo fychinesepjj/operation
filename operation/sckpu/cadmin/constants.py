@@ -5,3 +5,9 @@ FOOTER_CATEGORY = Enum([
     ('ROOT', (-1, _('Root'))),
     ('FIRST', (1, _('First'))),
 ])
+
+DISPLAY_STYLE = Enum([
+    ('LEFT', ('', _('Left'))),
+    ('RIGHT', ('right-style', _('Right'))),
+    ('NONE', ('no-style', _('None')))
+])

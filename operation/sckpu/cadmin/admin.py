@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from models import Site, FooterCategory, Project, Team, Member, NavGuide, NavList, Home
 from operation.core.admin.base import BaseModelAdmin, BaseModelInline
+from grappelli.forms import GrappelliSortableHiddenMixin
 from operation.core.utils import site
 
 
@@ -42,11 +43,11 @@ class FooterCategoryAdmin(BaseModelAdmin):
 class ProjectAdmin(BaseModelAdmin):
     list_display = ('ordering', 'id', 'title', 'promote', 'created_time')
     list_display_links = ('id', 'title')
-    list_editable = ('ordering', )
+    list_editable = ('ordering', 'promote')
     ordering = ('ordering',)
     fieldsets = (
         (_('Basic'), {
-            'fields': ('title', 'image', 'content', 'promote'),
+            'fields': ('title', 'sub_title', 'image', 'display_style', 'ordering', 'promote', 'content'),
         }),
         (_('Other'), {
             'fields': (('created_time', 'modified_time', 'creator', 'modifier')),
@@ -70,17 +71,18 @@ class MemberAdmin(BaseModelAdmin):
     )
 
 
-class MemberInlineAdmin(BaseModelInline, admin.StackedInline):
+class MemberInlineAdmin(BaseModelInline, GrappelliSortableHiddenMixin, admin.StackedInline):
     model = Member
     '''
     autocomplete_lookup_fields = {
         'fk': ['image'],
     }
     '''
-    inline_classes = ('grp-collapse grp-open',)
+    ordering = ('ordering',)
+    inline_classes = ('grp-collapse grp-open grp-closed',)
     fields = ('ordering', 'name', 'career', 'portrait', 'title', 'content')
     sortable_field_name = 'ordering'
-    extra = 1
+    extra = 0
 
 
 class TeamAdmin(BaseModelAdmin):
@@ -103,19 +105,21 @@ class TeamAdmin(BaseModelAdmin):
     inlines = [MemberInlineAdmin]
 
 
-class NavListInline(BaseModelInline, admin.StackedInline):
+class NavListInline(BaseModelInline, GrappelliSortableHiddenMixin, admin.StackedInline):
     model = NavList
     extra = 1
     max_num = 3
-    fields = ('title', 'sub_title', 'image')
-    inline_classes = ('grp-collapse grp-open',)
+    fields = ('ordering', 'title', 'sub_title', 'image')
+    inline_classes = ('grp-collapse grp-open grp-closed',)
+    sortable_field_name = 'ordering'
+    extra = 1
 
 
 class NavGuideInline(BaseModelInline, admin.StackedInline):
     model = NavGuide
     can_delete = False
     max_num = 1
-    fields = ('name', 'title', 'sub_title', 'image')
+    fields = ('name', 'link', 'title', 'sub_title', 'image', 'slogan_title', 'slogan_sub_title')
     inline_classes = ('grp-collapse grp-open',)
 
 

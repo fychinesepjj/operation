@@ -29,7 +29,7 @@ class PermissionReadonlyFields(PermissionReadonly):
 #django base models
 class BaseModel(models.Model):
     creator = models.ForeignKey(User, verbose_name=_("creator"), related_name="+")
-    created_time = models.DateTimeField(auto_now_add=True, verbose_name=_("created_time"))
+    created_time = models.DateTimeField(auto_now_add=True, verbose_name=_("created time"))
     modifier = models.ForeignKey(User, verbose_name=_("modifier"), related_name="+")
     modified_time = models.DateTimeField(auto_now=True, verbose_name=_("last modified"))
 

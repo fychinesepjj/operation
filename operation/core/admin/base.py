@@ -363,8 +363,8 @@ class BaseModelAdmin(admin.ModelAdmin):
         auth_manager.save_group_model(self, request, obj, form, change)
         super(BaseModelAdmin, self).save_model(request, obj, form, change)
 
-    def queryset(self, request):
-        query_set = super(BaseModelAdmin, self).queryset(request)
+    def get_queryset(self, request):
+        query_set = super(BaseModelAdmin, self).get_queryset(request)
         return auth_manager.query_by_auth(self, request, query_set)
 
     class Media:

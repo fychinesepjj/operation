@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-27 18:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: admin/base.py:89 admin/base.py:415
+#, python-format
+msgid "Successfully deleted %(count)d %(items)s."
+msgstr "成功删除 %(count)d %(items)s."
+
+#: admin/base.py:92 admin/base.py:418
+#, python-format
+msgid "Delete selected %(verbose_name_plural)s"
+msgstr "删除选择 %(verbose_name_plural)s"
+
+#: admin/base.py:121 admin/base.py:186
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "%(name)s 对象主键%(key)r不存在"
+
+#: admin/base.py:172
+#, python-format
+msgid "View %s"
+msgstr "查看 %s"
+
+#: admin/base.py:285
+msgid "Database error"
+msgstr "数据库错误"
+
+#: admin/base.py:290
+#, python-format
+msgid "%(total_count)s selected"
+msgid_plural "All %(total_count)s selected"
+msgstr[0] "%(total_count)s 已选择"
+msgstr[1] "全部 %(total_count)s 已选择"
+
+#: admin/base.py:296
+#, python-format
+msgid "0 of %(cnt)s selected"
+msgstr "0 个 %(cnt)s 已选择"
+
+#: admin/base.py:430
+#, python-format
+msgid "Successfully synced %(count)d %(items)s."
+msgstr "成功同步%(count)d %(items)s到数据库"
+
+#: admin/base.py:434
+msgid "0 items synced, Please check sync status."
+msgstr "0 数据已同步，请检查同步状态"
+
+#: admin/base.py:439
+#, python-format
+msgid "%(count)d  items fail to sync, id:[%(items)s]"
+msgstr "%(count)d 条数据同步失败, id:[%(items)s]"
+
+#: admin/base.py:446
+#, python-format
+msgid "Fail reasons: %(reasons)s"
+msgstr "失败原因：%(reasons)s"
+
+#: admin/base.py:451
+#, python-format
+msgid "Sync selected %(verbose_name_plural)s"
+msgstr "同步所选 %(verbose_name_plural)s"
+
+#: admin/base.py:475
+#, python-format
+msgid "%s changed, Please Sync it again."
+msgstr "%s 已修改，请再次同步."
+
+#: admin/manager.py:56
+msgid ""
+"set <group_code> field is not exists, Please alter db table and add this "
+"field."
+msgstr "<group_code>字段在数据库不存在，请手动添加"
+
+#: admin/manager.py:74
+msgid ""
+"query <group_code> field is not exists, Please alter db table and add this "
+"field."
+msgstr "<group_code>字段在数据库不存在，请手动添加"
+
+#: customs/admin.py:10
+msgid "addition action"
+msgstr "增加操作"
+
+#: customs/admin.py:11
+msgid "change action"
+msgstr "修改操作"
+
+#: customs/admin.py:12
+msgid "deletion action"
+msgstr "删除操作"
+
+#: customs/admin.py:48
+msgid "action flag"
+msgstr "操作类型"
+
+#: customs/site.py:77
+#, python-format
+msgid "%s administration"
+msgstr "%s 管理"
+
+#: customs/templates/admin/app_index.html:11
+#: customs/templates/admin/base.html:121
+#: customs/templates/admin/change_form.html:134
+#: customs/templatetags/admin_menus.py:18
+msgid "Home"
+msgstr "首页"
+
+#: customs/templates/admin/app_index.html:13
+#, python-format
+msgid "<li>%(name)s</li>"
+msgstr ""
+
+#: customs/templates/admin/app_index.html:30
+#: customs/templates/admin/change_form.html:137
+msgid "Add"
+msgstr "增加"
+
+#: customs/templates/admin/app_index.html:31
+msgid "Change"
+msgstr "修改"
+
+#: customs/templates/admin/app_index.html:38
+#: customs/templates/admin/menu.html:25
+msgid "You don´t have permission to edit anything."
+msgstr "无权限编辑"
+
+#: customs/templates/admin/base.html:95
+msgid "Change password"
+msgstr "修改秘密"
+
+#: customs/templates/admin/base.html:98
+msgid "Log out"
+msgstr "注销"
+
+#: customs/templates/admin/base.html:106
+msgid "Documentation"
+msgstr "文档"
+
+#: customs/templates/admin/base_site.html:4
+msgid "Public Service admin"
+msgstr "后台管理"
+
+#: customs/templates/admin/change_form.html:124
+#: customs/templates/admin/edit_inline/stacked.html:8
+msgid "Open All Items"
+msgstr "展开所有"
+
+#: customs/templates/admin/change_form.html:125
+#: customs/templates/admin/edit_inline/stacked.html:9
+msgid "Close All Items"
+msgstr "关闭所有"
+
+#: customs/templates/admin/change_form.html:149
+msgid "History"
+msgstr "历史"
+
+#: customs/templates/admin/change_form.html:150
+msgid "View on site"
+msgstr "查看"
+
+#: customs/templates/admin/change_form.html:168
+msgid "Please correct the error below."
+msgstr "请修正以下错误输入"
+
+#: customs/templates/admin/change_form.html:168
+msgid "Please correct the errors below."
+msgstr "请修正以下错误输入"
+
+#: customs/templates/admin/edit_inline/stacked.html:10
+#: customs/templates/admin/edit_inline/stacked.html:54
+#: customs/templates/admin/edit_inline/tabular.html:91
+msgid "Add Item"
+msgstr "增加"
+
+#: customs/templates/admin/edit_inline/stacked.html:23
+#: customs/templates/admin/edit_inline/tabular.html:64
+msgid "View on Site"
+msgstr "查看"
+
+#: customs/templates/admin/edit_inline/stacked.html:25
+#: customs/templates/admin/edit_inline/tabular.html:66
+msgid "Move Item"
+msgstr "移除"
+
+#: customs/templates/admin/edit_inline/stacked.html:29
+#: customs/templates/admin/edit_inline/tabular.html:70
+msgid "Delete Item"
+msgstr "删除"
+
+#: customs/templates/admin/edit_inline/stacked.html:52
+#: customs/templates/admin/edit_inline/tabular.html:89
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr "增加另一个%(verbose_name)s"
+
+#: customs/templates/admin/edit_inline/tabular.html:9
+msgid "Add Another"
+msgstr "增加另一个"
+
+#: models/base.py:31
+msgid "creator"
+msgstr "创建者"
+
+#: models/base.py:32
+msgid "created time"
+msgstr "创建时间"
+
+#: models/base.py:33
+msgid "modifier"
+msgstr "修改者"
+
+#: models/base.py:34
+msgid "last modified"
+msgstr "最后修改时间"
+
+#: models/base.py:42
+msgid "published"
+msgstr "发布状态"
+
+#: models/base.py:43
+msgid "sync status"
+msgstr "同步状态"
