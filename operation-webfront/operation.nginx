@@ -20,8 +20,8 @@ server {
     gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
     gzip_disable "msie6";
 
-    access_log /var/app/log/seabedop-webfront/access.log timed_combined;
-    error_log /var/app/log/seabedop-webfront/error.log;
+    access_log /var/app/log/sckpu/access.log timed_combined;
+    error_log /var/app/log/sckpu/error.log;
 
     # Fix proxy problem.
     set $foreign_addr $remote_addr;

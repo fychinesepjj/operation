@@ -156,14 +156,13 @@ div.cases-content p{
 
 /* project */
 .project-list{
-    padding:0 10%;
-    padding-bottom:60px;
+    padding:30px 10% 60px 10%;
 }
 .project{
-    padding:30px 0 20px 0;
+    padding:0 0 20px 0;
 }
 .project .media{
-    border-bottom:2px solid #f2f2f2;
+    border-bottom:1px dotted #ccc;
     padding:30px 10px;
 }
 .project-header p,.project-header h2{
@@ -239,15 +238,15 @@ div.cases-content p{
 .team-mem-star img{width:280px;}
 
 .divider{
-width: 15%;
-border-top: 2px solid #666;
+
+border-top: 1px solid #ccc;
 height:50px;
 }
-.page-title{width:60%;color:#999;border-bottom:1px solid #ccc;font-size:36px;padding-bottom:20px;color:#666;letter-spacing:2px;}
-.team-intro{padding:10px 30px;}
-.team-intro h2, .team-intro p{width:60%;color:#999;}
-.team-intro h2{border-bottom:none;}
-.team-intro p{font-size:20px;line-height:1.5em;margin-bottom:20px;}
+.page-title{color:#999;border-bottom:1px solid #ccc;font-size:36px;padding-bottom:15px;color:#666;letter-spacing:2px;}
+.nav-info{padding:10px 30px;padding-top:0;}
+.nav-info h2, .nav-info p{width:60%;color:#666;}
+.nav-info h2{border-bottom:none;}
+.nav-info p{font-size:20px;line-height:1.5em;margin-bottom:20px;}
 
 .team-mem{color:#999;padding:10px 0 30px 0;}
 .team-mem-intro{padding:10px 40% 10px 0;max-height:280px;overflow:hidden;}
@@ -265,7 +264,7 @@ height:50px;
 }
 .contact-detail{
     width:50%;
-    padding:20px 0;
+    padding:20px 30px;
 }
 .contact-detail dl{
     margin-bottom:10px;
@@ -280,6 +279,14 @@ height:50px;
 }
 /* about*/
 .detail{padding:30px 20px;}
+
+.about .nav-info .divider, .project-list .nav-info .divider, .contact .nav-info .divider{
+    height:10px;
+}
+.text-bold-grey{
+    color:#999;
+    font-weight: bold;
+}
 
 
 @media (max-width:1200px){
@@ -296,8 +303,8 @@ height:50px;
 @media (max-width:760px){
     .project-body .media-body{clear:both;padding-right:10px;text-align:justify;}
     .project-body img{width:100% !important;}
-    .team-intro h2, .team-intro p{width:100% !important;}
-    .team-intro .divider{width:50%;height:50px;}
+    .nav-info h2, .nav-info p{width:100% !important;}
+    .nav-info .divider{height:50px;}
     .nav a{padding-left:10%;}
     .team-mem-intro{padding-right:0 !important;}
     .team-mem-star p{padding:5px 0!important;}

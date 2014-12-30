@@ -49,13 +49,23 @@ AJAXIMAGE_AUTH_TEST = lambda u: True
 MONGODB_CONF = 'mongodb://localhost:27017'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sckpu',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/var/app/db/sckpu.db',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
+'''
+'default': {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'sckpu',
+    'USER': 'root',
+    'PASSWORD': '123456',
+    'HOST': 'localhost',
+}
+'''
 
 
 # Language

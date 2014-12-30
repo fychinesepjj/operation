@@ -4,6 +4,10 @@
 
 {% block content %}
     <div class="layout project-list">
+      <div class="nav-info">
+        <h2 class="page-title">成功案例</h2>
+        <div class="divider"></div>
+    </div>
       {% for project in projects %}
       <div class="line project">
          <div class="media media-x {{ project.display_style }}">
@@ -15,7 +19,7 @@
               <img src="{{ project.image.url }}" class="radius project-img" alt="img">
          <div class="media-body">
             {{ project.content|safe }}
-            <p class="more"><a href="{% url 'project_detail' project.id %}" class="text-red" >+ View Details</a></p>
+            <p class="more"><a href="{% url 'project_detail' project.id %}" class="text-bold-grey" >+ View Details</a></p>
               </div>
            </div>
         </div>
