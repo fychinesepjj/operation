@@ -95,8 +95,6 @@ class Project(BaseModel):
         blank=True)
     image = AjaxImageField(
         upload_to='images',
-        null=True,
-        blank=True,
         verbose_name=_('Project Image'),
         help_text=_('Please upload JPEG, PNG, GIF files, size: any')
     )

@@ -12,7 +12,7 @@
       <div class="line keypoint text-center nav-box nav-box-bgimg">
           <h1>{{ home.navguide.title }}</h1>
           <p>{{ home.navguide.sub_title }}</p>
-          <p class="padding-big-top"><a href="{{ home.navguide.link }}" class="button button-big bg-dot radius-rounded nav-box-button">{{ home.navguide.name }}</a></p>
+          <p class="padding-big-top"><a href="{{ home.navguide.link }}" class="button button-big radius-rounded nav-box-button">{{ home.navguide.name }}</a></p>
       </div>
       <div class="line keypoint text-center intro">
             <div class="intro-area">
@@ -36,10 +36,10 @@
 
       {% for project in projects %}
       <div class="line keypoint cases text-center">
-            <img src="{{ project.image.url }}" class="cases-img" title="Apple Concept">
-            <h3>{{ project.title }}</h3>
+            <a href="{% url 'project_detail' project.id %}"><img src="{{ project.image.url }}" class="cases-img" title="Apple Concept"></a>
+            <h3><a href="{% url 'project_detail' project.id %}">{{ project.title }}</a></h3>
             <p class="metadata">{{ project.sub_title }}</p>
-            <div class="cases-content">{{ project.content|safe }}</div>
+            <div class="cases-content">{{ project.content|safe|slice:"150" }}...</div>
       </div>
       {% endfor %}
 {% endblock %}

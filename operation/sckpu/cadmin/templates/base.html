@@ -21,7 +21,7 @@
   </head>
   <body>
     {% block nav %}
-    <div class="layout container-layout padding-large-top padding-big-bottom bg-white-opacity fixed" id="header">
+    <div class="layout container-layout padding-large-top padding-big-bottom bg-white-opacity " id="header">
           <div class="line">
             <div class="xl12 xs4 xm6 xb5 text-center">
               <button class="button icon-navicon float-right" data-target="#header-nav"></button>
@@ -30,7 +30,7 @@
             <div class="xl12 xs8 xm6 xb7 padding-nav-top">
                 <ul class="nav nav-menu nav-inline nav-navicon" id="header-nav">
                   <li  class="active"><a href="{% url 'index' %}">首页</a></li>
-                  <li><a href="{% url 'about' %}">简介</a></li>
+                  <li><a href="{% url 'about' %}">公司简介</a></li>
                   <li><a href="{% url 'team' %}">咨询团队</a></li>
                   <li><a href="{% url 'project' %}">成功案例</a></li>
                   <li><a href="{% url 'contact' %}">联系我们</a></li>

@@ -1,9 +1,12 @@
-from cadmin.models import Site, FooterCategory
-from cadmin.constants import FOOTER_CATEGORY
+from operation.sckpu.cadmin.models import Site, FooterCategory
+from operation.sckpu.cadmin.constants import FOOTER_CATEGORY
 
 
 def site_info(request):
-    site = Site.objects.get()
+    try:
+        site = Site.objects.get()
+    except:
+        site = None
     if site:
         return {'site': site}
     return {}

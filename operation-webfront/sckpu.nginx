@@ -6,7 +6,7 @@ log_format timed_combined '$remote_addr - $remote_user [$time_local] '
 server {
     listen 80;
     #listen 443 ssl;
-    server_name xxx.xxx.xxx.xxx;
+    server_name 127.0.0.1;
 
     # They never request frequantly, so keep-alive is meaningless for them.
     keepalive_timeout 60;
@@ -45,13 +45,13 @@ server {
     location = /favicon.ico { access_log off; log_not_found off; }
 
 
-    location /upload {
-        alias /var/app/data/operation/upload;
+    location /media/sckpu {
+        alias /var/app/media/sckpu;
         #expires 30d;
     }
 
-    location /seabed {
-        alias /var/app/data/operation/upload;
+    location /static/sckpu {
+        alias /var/app/static/sckpu;
         #expires 30d;
     }
 
@@ -63,11 +63,6 @@ server {
         uwsgi_connect_timeout 1800;
     }
 
-    location /static {
-       alias /var/app/enabled/operation-webfront/static;
-       #expires 30d;
-    }
-
     location /nginx-status {
         stub_status on;
         access_log off;
@@ -77,5 +72,5 @@ server {
 }
 
 upstream operation {
-        server xx.xx.xx.xx:7600;
+        server 127.0.0.1:7600;
 }

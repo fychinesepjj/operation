@@ -82,7 +82,7 @@ class CustomIndexDashboard(Dashboard):
             children=[
                 {
                     'title': _('Icons Class'),
-                    'url': '/static/images/icons.png',
+                    'url': '/static/sckpu/image/icons.png',
                     'external': True,
                 },
                 {

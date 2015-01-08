@@ -12,13 +12,13 @@
       <div class="line project">
          <div class="media media-x {{ project.display_style }}">
           <div class="project-header">
-              <h2>{{ project.title }}</h2>
+              <h2><a href="{% url 'project_detail' project.id %}">{{ project.title }}</a></h2>
               <p>{{ project.sub_title }}</p>
           </div>
           <div class="project-body">
               <img src="{{ project.image.url }}" class="radius project-img" alt="img">
          <div class="media-body">
-            {{ project.content|safe }}
+            {{ project.content|safe|slice:"400" }}...
             <p class="more"><a href="{% url 'project_detail' project.id %}" class="text-bold-grey" >+ View Details</a></p>
               </div>
            </div>

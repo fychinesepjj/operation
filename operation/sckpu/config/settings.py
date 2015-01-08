@@ -58,15 +58,15 @@ DATABASES = {
     }
 }
 '''
-'default': {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'sckpu',
-    'USER': 'root',
-    'PASSWORD': '123456',
-    'HOST': 'localhost',
-}
-'''
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sckpu',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+    }
 
+'''
 
 # Language
 LANGUAGE_CODE = 'zh-cn'
@@ -88,9 +88,9 @@ LOCALE_PATHS = (
 
 
 # Static
-MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/app/data/sckpu'
-STATIC_URL = '/static/'
+MEDIA_URL = '/media/sckpu/'
+MEDIA_ROOT = '/var/app/media/sckpu'
+STATIC_URL = '/static/sckpu/'
 STATIC_ROOT = '/var/app/static/sckpu'
 #STATICFILES_DIRS = (,)
 
