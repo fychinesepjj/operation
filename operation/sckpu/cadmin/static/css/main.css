@@ -326,9 +326,6 @@ div.cases-content p{
 }
 
 .project{
-
-    min-height:500px;
-
     padding:0 0 20px 0;
 
 }
@@ -338,7 +335,7 @@ div.cases-content p{
     border-bottom:1px dotted #ccc;
 
     padding:30px 10px;
-
+    padding-top:10px;
 }
 
 .project-header p,.project-header h2{
@@ -393,7 +390,7 @@ div.cases-content p{
 
 
 
-.media p{line-height:2em;text-align:left;}
+.media p{line-height:1.5em;text-align:left;}
 .media .project-header p{text-align:center;}
 .project-img{
 

@@ -28,6 +28,7 @@ class Site(BaseModel):
     copy_right = models.CharField(verbose_name=_('Copy Right'), max_length=256)
     owner = models.CharField(verbose_name=_('Owner'), max_length=64, blank=True)
     phone = models.CharField(verbose_name=_('Phone'), max_length=64, blank=True)
+    email = models.CharField(verbose_name=_('Email'), max_length=128, blank=True)
     address = models.CharField(verbose_name=_('Address'), max_length=256, blank=True)
     introduction = UEditorField(
         verbose_name=_('Site introduction'),

@@ -14,7 +14,7 @@ class WebSiteAdmin(BaseModelAdmin):
             'fields': ('name', 'domain', 'logo', 'copy_right'),
         }),
         (_('User'), {
-            'fields': ('owner', 'phone', 'address'),
+            'fields': ('owner', 'phone', 'email', 'address'),
         }),
         (_('Info'), {
             'fields': (('qr_name', 'qr_link', 'qr_code', 'introduction')),
