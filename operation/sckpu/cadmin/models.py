@@ -218,6 +218,7 @@ class NavList(BaseModel):
     )
     title = models.CharField(verbose_name=_('Nav Title'), max_length=256)
     sub_title = models.CharField(verbose_name=_('Nav Sub Title'), max_length=256)
+    link = models.CharField(verbose_name=_('Link'), max_length=256)
     ordering = models.PositiveIntegerField(_('ordering'), default=1)
     home = models.ForeignKey("Home", verbose_name=_('Home Page'), related_name="navlist")
 

@@ -109,7 +109,7 @@ class NavListInline(BaseModelInline, GrappelliSortableHiddenMixin, admin.Stacked
     model = NavList
     extra = 1
     max_num = 3
-    fields = ('ordering', 'title', 'sub_title', 'image')
+    fields = ('ordering', 'title', 'link', 'sub_title', 'image')
     inline_classes = ('grp-collapse grp-open grp-closed',)
     sortable_field_name = 'ordering'
     extra = 1

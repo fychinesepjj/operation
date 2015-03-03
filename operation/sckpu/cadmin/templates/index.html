@@ -5,6 +5,7 @@
   <style>
   .nav-box-bgimg {
   background: #fff url("{{ home.navguide.image.url }}") no-repeat center center;
+  background-size: cover;
   }
   </style>
 {% endblock %}
@@ -24,7 +25,7 @@
         {% for nav_item in navlist %}
           <div class="xl12 xs6 xm4 xb4">
             <div class="media clearfix">
-              <a href="#"><img src="{{ nav_item.image.url }}" class="radius" alt="icons"></a>
+              <a href="{{ nav_item.link }}"><img src="{{ nav_item.image.url }}" class="radius" alt="icons"></a>
               <div class="media-body">
                 <h3>{{ nav_item.title }}</h3>
                 <p>{{ nav_item.sub_title }}</p>
